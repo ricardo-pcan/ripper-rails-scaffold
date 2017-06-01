@@ -1,0 +1,21 @@
+{
+    "staging": {
+        "url": "clases.vincoorbisdev.com",
+        "user": "clases",
+        "group": "clases",
+        "hosts": ["clases.vincoorbisdev.com"],
+        "public_dir": "/var/www/vhosts/clases.vincoorbisdev.com/public/",
+        "cpchuy_dir": "/var/www/vhosts/clases.vincoorbisdev.com/",
+        "command_prefixes": [],
+        "dbname": "clases",
+        "dbuser": "clases",
+        "dbpassword": "P2nurezESUwR",
+        "dbhost": "localhost",
+        "exclude": [
+            ".env",
+            "log/",
+            "tmp/",
+            "postinstall.sh"
+        ]
+    }
+}
