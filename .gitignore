@@ -32,3 +32,8 @@ src/.yardoc
 *.swp
 *.rbc
 *.pyc
+dist/
+backup/
+*.pyc
+.DS_Store
+.swp
