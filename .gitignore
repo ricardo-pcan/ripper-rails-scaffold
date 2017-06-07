@@ -16,6 +16,7 @@ src/config/initializers/secret_token.rb
 src/.env
 src/.bundle
 src/vendor/bundle
+src/Gemfile.lock
 *.rvmrc
 /vendor/assets/bower_components
 *.bowerrc

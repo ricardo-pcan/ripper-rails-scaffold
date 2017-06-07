@@ -1,0 +1,17 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - db/schema.rb
+    - Gemfile
+    - bin/*
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+MethodLength:
+  Max: 20
+BlockLength:
+  Max: 170
+ClassLength:
+  Max: 300

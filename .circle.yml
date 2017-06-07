@@ -1,0 +1,31 @@
+machine:
+    timezone:
+        America/Mexico_City
+    ruby:
+        version: 2.3.4
+    python:
+        version: 2.7.11
+dependencies:
+    pre:
+        - pip install fabric
+        - pip install vo-fabutils
+    override:
+        - git submodule update --init --recursive
+        - cd src; bundle install
+        - bundle install
+test:
+    pre:
+        - mkdir -p $CIRCLE_ARTIFACTS/reports/rspec/ $CIRCLE_TEST_REPORTS/rspec/
+        - mkdir ~/reports && mkdir ~/reports/artifacts
+        - cp ./src/.env.circle ./src/.env
+        - cd ./src; rubocop
+        - cd ./src; rails db:reset
+    post:
+        - cd ./src; rails db:migrate RAILS_ENV=test
+        - cd src; rspec --format html --out $CIRCLE_ARTIFACTS/reports/rspec/index.html
+        - bundle exec danger
+deployment:
+    staging:
+        branch: staging
+        owner: vinco
+        commands:
